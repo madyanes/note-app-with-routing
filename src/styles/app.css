@@ -10,6 +10,17 @@ a {
   color: inherit;
 }
 
+form input {
+  font-size: x-large;
+  width: 100%;
+  border: none;
+}
+
+form .editable {
+  font-size: x-large;
+  width: 750px;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -26,6 +37,7 @@ body {
 #root>header {
   flex-basis: 250px;
   background-color: #004b9a;
+  position: relative;
   height: 100vh;
 
   color: white;
@@ -80,4 +92,28 @@ body {
   border: 1px solid #ccc;
   text-align: center;
   padding: 10px 0;
+}
+
+.new-note-button-container {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+}
+
+.new-note-button {
+  padding: 10px 25px;
+  margin: 0 auto;
+  font-size: larger;
+
+  display: flex;
+  align-items: center;
+  width: 70%;
+  background-color: #1566bd;
+  text-align: center;
+  justify-content: center;
+}
+
+.editable:empty:before {
+  content: attr(data-placeholder);
+  color: #b3b3b3;
 }

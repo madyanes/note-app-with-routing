@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { getAllNotes } from './utils/local-data'
 import Notes from './pages/Notes'
 import Detail from './pages/Detail'
+import Form from './pages/Form'
 import SiteHeader from './components/SiteHeader'
 import SiteNavigation from './components/SiteNavigation'
 import SiteFooter from './components/SiteFooter'
@@ -30,6 +31,7 @@ class App extends React.Component {
             <Routes>
               <Route path="/" element={<Notes notes={this.state.notes} />} />
               <Route path="/:id" element={<Detail />} />
+              <Route path="/new" element={<Form />} />
             </Routes>
           </main>
           <footer>
