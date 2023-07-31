@@ -68,6 +68,14 @@ body {
   padding: 5px 0;
 }
 
+#root>.container-base-box>main .note-detail h1 {
+  border-bottom: 1px solid #ccc;
+}
+
+#root>.container-base-box>main .note-detail footer p {
+  padding: 0 0 20px;
+}
+
 #root>.container-base-box>footer {
   border: 1px solid #ccc;
   text-align: center;
