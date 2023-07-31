@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { getAllNotes } from './utils/local-data'
+import { addNote, getAllNotes } from './utils/local-data'
 import Notes from './pages/Notes'
 import Detail from './pages/Detail'
 import Form from './pages/Form'
@@ -17,6 +17,15 @@ class App extends React.Component {
     this.state = {
       notes: getAllNotes()
     }
+
+    this.addNoteHandler = this.addNoteHandler.bind(this)
+  }
+
+  addNoteHandler(newNote) {
+    addNote(newNote)
+    this.setState((prevState) => ({
+      notes: [...prevState.notes, newNote]
+    }))
   }
 
   render() {
@@ -31,7 +40,7 @@ class App extends React.Component {
             <Routes>
               <Route path="/" element={<Notes notes={this.state.notes} />} />
               <Route path="/:id" element={<Detail />} />
-              <Route path="/new" element={<Form />} />
+              <Route path="/new" element={<Form onAddNote={this.addNoteHandler} />} />
             </Routes>
           </main>
           <footer>
