@@ -46,3 +46,13 @@ body {
 
   padding-left: 20px;
 }
+
+#root>.container-base-box main {
+  min-height: 80vh;
+}
+
+#root>.container-base-box footer {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 10px 0;
+}

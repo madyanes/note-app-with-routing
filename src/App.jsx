@@ -4,6 +4,7 @@ import Notes from './pages/Notes'
 import Detail from './pages/Detail'
 import SiteHeader from './components/SiteHeader'
 import SiteNavigation from './components/SiteNavigation'
+import SiteFooter from './components/SiteFooter'
 
 import './styles/app.css'
 
@@ -22,6 +23,9 @@ class App extends React.Component {
               <Route path="/:id" element={<Detail />} />
             </Routes>
           </main>
+          <footer>
+            <SiteFooter />
+          </footer>
         </div>
       </React.Fragment>
     )
