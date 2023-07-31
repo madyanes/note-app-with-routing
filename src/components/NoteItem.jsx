@@ -6,14 +6,22 @@ class NoteItem extends React.Component {
   render() {
     return (
       <>
+        <article>
+          <h1>
+            <Link
+              to={`/${this.props.note.id}`}
+              element={<Detail />}
+            >{this.props.note.title}</Link>
+          </h1>
+          <footer>
+            <p>{this.props.note.createdAt}</p>
+          </footer>
+          <p>{this.props.note.body}</p>
+        </article>
         <p>
-          <Link
-            to={`/${this.props.note.id}`}
-            element={<Detail />}
-          >{this.props.note.title}</Link>
+
         </p>
-        <p>{this.props.note.createdAt}</p>
-        <p>{this.props.note.body}</p>
+
       </>
     )
   }

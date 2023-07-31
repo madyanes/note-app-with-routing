@@ -14,16 +14,19 @@ class NoteList extends React.Component {
   render() {
     return (
       <>
-        {
-          this.state.notes.map((note) => {
-            return (
-              <NoteItem
-                key={note.id}
-                note={note}
-              />
-            )
-          })
-        }
+        <section>
+          <h1>{this.props.headingText}</h1>
+          {
+            this.state.notes.map((note) => {
+              return (
+                <NoteItem
+                  key={note.id}
+                  note={note}
+                />
+              )
+            })
+          }
+        </section>
       </>
     )
   }
