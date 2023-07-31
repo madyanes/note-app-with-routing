@@ -1,9 +1,10 @@
 import React from 'react'
+import NoteList from '../components/NoteList'
 
 class Notes extends React.Component {
   render() {
     return (
-      <p>Notes</p>
+      <NoteList />
     )
   }
 }
