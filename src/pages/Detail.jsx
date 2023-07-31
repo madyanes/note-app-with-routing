@@ -4,7 +4,6 @@ import NoteDetail from '../components/NoteDetail'
 
 const DetailWrapper = () => {
   const { id } = useParams()
-  console.log(id)
 
   return <Detail id={id} />
 }
