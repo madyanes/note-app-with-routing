@@ -5,6 +5,8 @@ import Detail from './pages/Detail'
 import SiteHeader from './components/SiteHeader'
 import SiteNavigation from './components/SiteNavigation'
 
+import './styles/app.css'
+
 class App extends React.Component {
   render() {
     return (
@@ -13,12 +15,14 @@ class App extends React.Component {
           <SiteHeader />
           <SiteNavigation />
         </header>
-        <main>
-          <Routes>
-            <Route path="/" element={<Notes />} />
-            <Route path="/:id" element={<Detail />} />
-          </Routes>
-        </main>
+        <div className="container-base-box">
+          <main>
+            <Routes>
+              <Route path="/" element={<Notes />} />
+              <Route path="/:id" element={<Detail />} />
+            </Routes>
+          </main>
+        </div>
       </React.Fragment>
     )
   }
