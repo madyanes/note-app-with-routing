@@ -1,9 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import NoteItem from '../components/NoteItem'
+import NoteDetail from '../components/NoteDetail'
 
 const DetailWrapper = () => {
   const { id } = useParams()
+  console.log(id)
 
   return <Detail id={id} />
 }
@@ -11,7 +12,7 @@ const DetailWrapper = () => {
 class Detail extends React.Component {
   render() {
     return (
-      <NoteItem noteId={this.props.id} />
+      <NoteDetail noteId={this.props.id} />
     )
   }
 }
