@@ -1,5 +1,6 @@
 import React from 'react'
 import { getAllNotes } from '../utils/local-data'
+import NoteItem from './NoteItem'
 
 class NoteList extends React.Component {
   constructor(props) {
@@ -16,7 +17,10 @@ class NoteList extends React.Component {
         {
           this.state.notes.map((note) => {
             return (
-              <p key={note.id}>{note.id}</p>
+              <NoteItem
+                key={note.id}
+                note={note}
+              />
             )
           })
         }
