@@ -4,7 +4,10 @@ import NoteList from '../components/NoteList'
 class Notes extends React.Component {
   render() {
     return (
-      <NoteList headingText='Notes' />
+      <NoteList
+        headingText='Notes'
+        notes={this.props.notes}
+      />
     )
   }
 }
