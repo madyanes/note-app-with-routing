@@ -19,10 +19,6 @@ class NoteItem extends React.Component {
           </footer>
           <p>{this.props.note.body}</p>
         </article>
-        <p>
-
-        </p>
-
       </>
     )
   }
