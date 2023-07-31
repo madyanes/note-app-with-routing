@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Detail from '../pages/Detail'
+import { showFormattedDate } from '../utils/local-data'
 
 class NoteItem extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class NoteItem extends React.Component {
             >{this.props.note.title}</Link>
           </h1>
           <footer>
-            <p>{this.props.note.createdAt}</p>
+            <p>{showFormattedDate(this.props.note.createdAt)}</p>
           </footer>
           <p>{this.props.note.body}</p>
         </article>
