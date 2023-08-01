@@ -37,8 +37,9 @@ body {
 #root>header {
   flex-basis: 250px;
   background-color: #004b9a;
-  position: relative;
-  height: 100vh;
+  position: fixed;
+  height: 100%;
+  width: 300px;
 
   color: white;
   text-align: center;
@@ -60,6 +61,7 @@ body {
   flex-basis: 750px;
 
   padding-left: 20px;
+  margin-left: 300px;
 }
 
 #root>.container-base-box>main {
