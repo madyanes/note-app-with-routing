@@ -7,6 +7,7 @@ class Notes extends React.Component {
       <NoteList
         headingText='Notes'
         notes={this.props.notes}
+        deleteNoteHandler={this.props.deleteNoteHandler}
       />
     )
   }

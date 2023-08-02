@@ -13,6 +13,7 @@ class NoteList extends React.Component {
                 <NoteItem
                   key={note.id}
                   note={note}
+                  deleteNoteHandler={this.props.deleteNoteHandler}
                 />
               )
             })

@@ -20,7 +20,9 @@ class NoteItem extends React.Component {
           </footer>
           <p>{this.props.note.body}</p>
           <div className="options">
-            <div><SlTrash /> <span>Hapus</span></div>
+            <div onClick={() => { this.props.deleteNoteHandler({ id: this.props.note.id }) }}>
+              <SlTrash /> <span>Hapus</span>
+            </div>
             <div><SlArrowDownCircle /> <span>Arsipkan</span></div>
             <div><SlPencil /> <span>Edit</span></div>
           </div>

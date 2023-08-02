@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { addNote, getAllNotes, getNote } from './utils/local-data'
+import { addNote, getAllNotes, deleteNote } from './utils/local-data'
 import Notes from './pages/Notes'
 import Detail from './pages/Detail'
 import Form from './pages/Form'
@@ -19,10 +19,17 @@ class App extends React.Component {
     }
 
     this.addNoteHandler = this.addNoteHandler.bind(this)
+    this.deleteNoteHandler = this.deleteNoteHandler.bind(this)
   }
 
   addNoteHandler({ title, body }) {
     addNote({ title, body })
+    this.setState({ notes: getAllNotes() })
+  }
+
+  deleteNoteHandler({ id }) {
+    console.log('deleted')
+    deleteNote(id)
     this.setState({ notes: getAllNotes() })
   }
 
@@ -36,7 +43,7 @@ class App extends React.Component {
         <div className="container-base-box">
           <main>
             <Routes>
-              <Route path="/" element={<Notes notes={this.state.notes} />} />
+              <Route path="/" element={<Notes notes={this.state.notes} deleteNoteHandler={this.deleteNoteHandler} />} />
               <Route path="/:id" element={<Detail />} />
               <Route path="/new" element={<Form onAddNote={this.addNoteHandler} />} />
             </Routes>
