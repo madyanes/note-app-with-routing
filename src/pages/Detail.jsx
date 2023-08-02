@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom'
 import { getNote } from '../utils/local-data'
 import NoteDetail from '../components/NoteDetail'
 
-const DetailWrapper = () => {
+const DetailWrapper = ({ deleteNoteHandler }) => {
   const { id } = useParams()
 
-  return <Detail id={id} />
+  return <Detail id={id} deleteNoteHandler={deleteNoteHandler} />
 }
 
 class Detail extends React.Component {
@@ -20,7 +20,10 @@ class Detail extends React.Component {
 
   render() {
     return (
-      <NoteDetail note={this.state.note} />
+      <NoteDetail
+        note={this.state.note}
+        deleteNoteHandler={this.props.deleteNoteHandler}
+      />
     )
   }
 }

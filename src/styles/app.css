@@ -139,3 +139,8 @@ body {
 .options>div>span {
   padding-left: 0.18rem;
 }
+
+.note-detail .options {
+  border-radius: 25px;
+  margin-bottom: 20px;
+}

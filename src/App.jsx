@@ -28,7 +28,6 @@ class App extends React.Component {
   }
 
   deleteNoteHandler({ id }) {
-    console.log('deleted')
     deleteNote(id)
     this.setState({ notes: getAllNotes() })
   }
@@ -44,7 +43,7 @@ class App extends React.Component {
           <main>
             <Routes>
               <Route path="/" element={<Notes notes={this.state.notes} deleteNoteHandler={this.deleteNoteHandler} />} />
-              <Route path="/:id" element={<Detail />} />
+              <Route path="/:id" element={<Detail deleteNoteHandler={this.deleteNoteHandler} />} />
               <Route path="/new" element={<Form onAddNote={this.addNoteHandler} />} />
             </Routes>
           </main>
