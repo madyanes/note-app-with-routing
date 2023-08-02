@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { SlTrash, SlArrowDownCircle, SlPencil } from 'react-icons/sl'
 import Detail from '../pages/Detail'
 import { showFormattedDate } from '../utils/local-data'
 
@@ -18,6 +19,11 @@ class NoteItem extends React.Component {
             <p>{showFormattedDate(this.props.note.createdAt)}</p>
           </footer>
           <p>{this.props.note.body}</p>
+          <div className="options">
+            <div><SlTrash /> <span>Hapus</span></div>
+            <div><SlArrowDownCircle /> <span>Arsipkan</span></div>
+            <div><SlPencil /> <span>Edit</span></div>
+          </div>
         </article>
       </>
     )

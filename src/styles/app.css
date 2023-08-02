@@ -119,3 +119,23 @@ body {
   content: attr(data-placeholder);
   color: #b3b3b3;
 }
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  border: 1px solid #ccc;
+  padding: .31rem 0;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin-top: .31rem;
+}
+
+.options>div {
+  display: flex;
+  align-items: center;
+}
+
+.options>div>span {
+  padding-left: 0.18rem;
+}
