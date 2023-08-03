@@ -11,7 +11,7 @@ class NoteItem extends React.Component {
         <article>
           <h1>
             <Link
-              to={`/${this.props.note.id}`}
+              to={`/notes/${this.props.note.id}`}
             >{this.props.note.title}</Link>
           </h1>
           <footer>

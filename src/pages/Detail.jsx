@@ -2,11 +2,17 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import NoteDetail from '../components/NoteDetail'
+import NotFound from './NotFound'
 
 const DetailWrapper = ({ deleteNoteHandler, archiveNoteHandler, getNoteHandler }) => {
   const { id } = useParams()
+  const note = getNoteHandler({ id })
 
-  return <Detail deleteNoteHandler={deleteNoteHandler} archiveNoteHandler={archiveNoteHandler} note={getNoteHandler({ id })} />
+  if (!note) {
+    return <NotFound />
+  }
+
+  return <Detail deleteNoteHandler={deleteNoteHandler} archiveNoteHandler={archiveNoteHandler} note={note} />
 }
 
 class Detail extends React.Component {
