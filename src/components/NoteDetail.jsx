@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { SlTrash, SlArrowDownCircle, SlPencil, SlArrowUpCircle } from 'react-icons/sl'
+import { SlTrash, SlArrowDownCircle, SlArrowUpCircle } from 'react-icons/sl'
 import { showFormattedDate } from '../utils/local-data'
 
 const NoteDetailWrapper = ({ note, deleteNoteHandler, archiveNoteHandler }) => {
@@ -49,7 +49,6 @@ class NoteDetail extends React.Component {
                     : <><SlArrowUpCircle /> <span>Batal Arsip</span></>
                 }
               </div>
-              <div><SlPencil /> <span>Edit</span></div>
             </div>
 
           </footer>
