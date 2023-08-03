@@ -142,6 +142,7 @@ body {
 .options>div {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .options>div>span {
