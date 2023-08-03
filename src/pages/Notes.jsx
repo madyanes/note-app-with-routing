@@ -1,5 +1,4 @@
 import React from 'react'
-import { getArchivedNotes } from '../utils/local-data'
 import NoteList from '../components/NoteList'
 
 class Notes extends React.Component {
