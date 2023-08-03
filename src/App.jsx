@@ -93,10 +93,7 @@ class App extends React.Component {
       <React.Fragment>
         <header>
           <SiteHeader />
-          <SiteNavigation
-            searchKeyword={this.state.searchKeyword}
-            searchKeywordChange={this.searchKeywordChangeHandler}
-          />
+          <SiteNavigation />
         </header>
         <div className="container-base-box">
           <main>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { PiNotePencil } from 'react-icons/pi'
-import SearchNote from './SearchNote'
 
 class SiteNavigation extends React.Component {
   render() {
