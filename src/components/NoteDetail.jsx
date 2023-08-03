@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import { SlTrash, SlArrowDownCircle, SlPencil, SlArrowUpCircle } from 'react-icons/sl'
 import { showFormattedDate } from '../utils/local-data'
 
@@ -57,6 +58,19 @@ class NoteDetail extends React.Component {
       </>
     )
   }
+}
+
+NoteDetailWrapper.propTypes = {
+  note: PropTypes.object.isRequired,
+  deleteNoteHandler: PropTypes.func.isRequired,
+  archiveNoteHandler: PropTypes.func.isRequired,
+}
+
+NoteDetail.propTypes = {
+  note: PropTypes.object.isRequired,
+  deleteNoteHandler: PropTypes.func.isRequired,
+  archiveNoteHandler: PropTypes.func.isRequired,
+  navigate: PropTypes.func.isRequired,
 }
 
 export default NoteDetailWrapper
