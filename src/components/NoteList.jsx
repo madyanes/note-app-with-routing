@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import NoteItem from './NoteItem'
 
 class NoteList extends React.Component {
@@ -25,6 +26,13 @@ class NoteList extends React.Component {
       </>
     )
   }
+}
+
+NoteList.propTypes = {
+  headingText: PropTypes.string.isRequired,
+  notes: PropTypes.array.isRequired,
+  deleteNoteHandler: PropTypes.func.isRequired,
+  archiveNoteHandler: PropTypes.func.isRequired,
 }
 
 export default NoteList
