@@ -1,9 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom'
+
+const FormWrapper = ({ onAddNote }) => {
+  const navigate = useNavigate()
+
+  return <Form mavigate={navigate} onAddNote={onAddNote} />
+}
 
 class Form extends React.Component {
   constructor(props) {
     super(props)
+
+    console.log('Komponen <Form />', props)
 
     this.state = {
       title: '',
@@ -29,6 +38,8 @@ class Form extends React.Component {
       title: this.state.title,
       body: this.state.body,
     })
+
+    this.props.navigate('/') // doesn't work
   }
 
   render() {
@@ -41,7 +52,7 @@ class Form extends React.Component {
           <form action="#" onSubmit={this.onNoteSubmitEventHandler}>
             <input type="text" placeholder='Title' value={this.state.title} onChange={this.onTitleChangeEventHandler} />
             <div className='editable' data-placeholder='Write something...' contentEditable onInput={this.onBodyInputEventHandler} />
-            <button>Add new note</button>
+            <button className='btn-new-note'>Add new note</button>
           </form>
         </article>
       </>
@@ -53,4 +64,4 @@ Form.propTypes = {
   onAddNote: PropTypes.func.isRequired,
 }
 
-export default Form
+export default FormWrapper
