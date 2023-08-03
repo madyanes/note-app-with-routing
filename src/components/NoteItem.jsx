@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SlTrash, SlArrowDownCircle, SlPencil, SlArrowUpCircle } from 'react-icons/sl'
+import PropTypes from 'prop-types'
 import Detail from '../pages/Detail'
 import { showFormattedDate } from '../utils/local-data'
 
@@ -36,6 +37,12 @@ class NoteItem extends React.Component {
       </>
     )
   }
+}
+
+NoteItem.propTypes = {
+  note: PropTypes.object.isRequired,
+  deleteNoteHandler: PropTypes.func.isRequired,
+  archiveNoteHandler: PropTypes.func.isRequired,
 }
 
 export default NoteItem
