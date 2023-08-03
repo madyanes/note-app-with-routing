@@ -10,6 +10,8 @@ class Notes extends React.Component {
         notes={this.props.notes}
         deleteNoteHandler={this.props.deleteNoteHandler}
         archiveNoteHandler={this.props.archiveNoteHandler}
+        searchKeyword={this.props.searchKeyword}
+        searchKeywordChange={this.props.searchKeywordChange}
       />
     )
   }

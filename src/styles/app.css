@@ -148,3 +148,13 @@ body {
 .emptyMessage {
   font-style: oblique;
 }
+
+.search {
+  padding-bottom: 1.25rem;
+}
+
+.search input {
+  width: 100%;
+  padding: .6rem .3rem;
+  border: 1px solid #ccc;
+}

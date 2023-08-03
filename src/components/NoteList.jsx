@@ -1,11 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import NoteItem from './NoteItem'
+import SearchNote from './SearchNote'
 
 class NoteList extends React.Component {
   render() {
     return (
       <>
+        <div className="search">
+          <SearchNote
+            searchKeyword={this.props.searchKeyword}
+            searchKeywordChange={this.props.searchKeywordChange}
+          />
+        </div>
         <section>
           <h1>{this.props.headingText}</h1>
           {
