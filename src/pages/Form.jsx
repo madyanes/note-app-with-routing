@@ -58,8 +58,13 @@ class Form extends React.Component {
   }
 }
 
+FormWrapper.propTypes = {
+  onAddNote: PropTypes.func.isRequired,
+}
+
 Form.propTypes = {
   onAddNote: PropTypes.func.isRequired,
+  navigate: PropTypes.func.isRequired,
 }
 
 export default FormWrapper

@@ -19,6 +19,7 @@ class Notes extends React.Component {
 
 Notes.propTypes = {
   archives: PropTypes.bool,
+  notes: PropTypes.array.isRequired,
   deleteNoteHandler: PropTypes.func.isRequired,
   archiveNoteHandler: PropTypes.func.isRequired,
   searchKeyword: PropTypes.string.isRequired,
