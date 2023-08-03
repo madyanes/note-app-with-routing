@@ -52,7 +52,7 @@ class App extends React.Component {
           <main>
             <Routes>
               <Route path="/" element={<Notes notes={this.state.activeNotes} deleteNoteHandler={this.deleteNoteHandler} archiveNoteHandler={this.archiveNoteHandler} />} />
-              <Route path="/:id" element={<Detail deleteNoteHandler={this.deleteNoteHandler} />} />
+              <Route path="/:id" element={<Detail deleteNoteHandler={this.deleteNoteHandler} archiveNoteHandler={this.archiveNoteHandler} />} />
               <Route path="/new" element={<Form onAddNote={this.addNoteHandler} />} />
               <Route path="/archives" element={<Notes notes={this.state.archivedNotes} deleteNoteHandler={this.deleteNoteHandler} archiveNoteHandler={this.archiveNoteHandler} archives />} />
             </Routes>

@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { SlTrash, SlArrowDownCircle, SlPencil } from 'react-icons/sl'
 import { showFormattedDate } from '../utils/local-data'
 
-const NoteDetailWrapper = ({ note, deleteNoteHandler }) => {
+const NoteDetailWrapper = ({ note, deleteNoteHandler, archiveNoteHandler }) => {
   const navigate = useNavigate()
-  return <NoteDetail note={note} deleteNoteHandler={deleteNoteHandler} navigate={navigate} />
+  return <NoteDetail note={note} deleteNoteHandler={deleteNoteHandler} navigate={navigate} archiveNoteHandler={archiveNoteHandler} />
 }
 
 class NoteDetail extends React.Component {
@@ -33,7 +33,7 @@ class NoteDetail extends React.Component {
               <div onClick={this.onDeleteNoteHandler}>
                 <SlTrash /> <span>Hapus</span>
               </div>
-              <div><SlArrowDownCircle /> <span>Arsipkan</span></div>
+              <div onClick={() => { this.props.archiveNoteHandler({ id: this.props.note.id }) }}><SlArrowDownCircle /> <span>Arsipkan</span></div>
               <div><SlPencil /> <span>Edit</span></div>
             </div>
 
