@@ -6,7 +6,7 @@ class Notes extends React.Component {
   render() {
     return (
       <NoteList
-        headingText='Notes'
+        headingText={this.props.archives ? 'Archived Notes' : 'Notes'}
         notes={this.props.notes}
         deleteNoteHandler={this.props.deleteNoteHandler}
         archiveNoteHandler={this.props.archiveNoteHandler}

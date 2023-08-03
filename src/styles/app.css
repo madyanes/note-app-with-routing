@@ -144,3 +144,7 @@ body {
   border-radius: 25px;
   margin-bottom: 20px;
 }
+
+.emptyMessage {
+  font-style: oblique;
+}
