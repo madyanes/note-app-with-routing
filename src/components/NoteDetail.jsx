@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { SlTrash, SlArrowDownCircle, SlPencil } from 'react-icons/sl'
+import { SlTrash, SlArrowDownCircle, SlPencil, SlArrowUpCircle } from 'react-icons/sl'
 import { showFormattedDate } from '../utils/local-data'
 
 const NoteDetailWrapper = ({ note, deleteNoteHandler, archiveNoteHandler }) => {
@@ -12,12 +12,20 @@ class NoteDetail extends React.Component {
   constructor(props) {
     super(props)
 
+    this.state = {
+      archived: this.props.note.archived,
+    }
+
     this.onDeleteNoteHandler = this.onDeleteNoteHandler.bind(this)
   }
 
   onDeleteNoteHandler() {
     this.props.deleteNoteHandler({ id: this.props.note.id })
     this.props.navigate('/')
+  }
+
+  onArchiveStateChange() {
+    this.setState((prevState) => !prevState.archived)
   }
 
   render() {
@@ -33,7 +41,13 @@ class NoteDetail extends React.Component {
               <div onClick={this.onDeleteNoteHandler}>
                 <SlTrash /> <span>Hapus</span>
               </div>
-              <div onClick={() => { this.props.archiveNoteHandler({ id: this.props.note.id }) }}><SlArrowDownCircle /> <span>Arsipkan</span></div>
+              <div onClick={() => { this.props.archiveNoteHandler(this.props.note) }}>
+                {
+                  !this.props.note.archived
+                    ? <><SlArrowDownCircle /> <span>Arsipkan</span></>
+                    : <><SlArrowUpCircle /> <span>Batal Arsip</span></>
+                }
+              </div>
               <div><SlPencil /> <span>Edit</span></div>
             </div>
 

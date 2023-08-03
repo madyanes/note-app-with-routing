@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { SlTrash, SlArrowDownCircle, SlPencil } from 'react-icons/sl'
+import { SlTrash, SlArrowDownCircle, SlPencil, SlArrowUpCircle } from 'react-icons/sl'
 import Detail from '../pages/Detail'
 import { showFormattedDate } from '../utils/local-data'
 
@@ -23,8 +23,12 @@ class NoteItem extends React.Component {
             <div onClick={() => { this.props.deleteNoteHandler({ id: this.props.note.id }) }}>
               <SlTrash /> <span>Hapus</span>
             </div>
-            <div onClick={() => { this.props.archiveNoteHandler({ id: this.props.note.id }) }}>
-              <SlArrowDownCircle /> <span>Arsipkan</span>
+            <div onClick={() => { this.props.archiveNoteHandler(this.props.note) }}>
+              {
+                !this.props.note.archived
+                  ? <><SlArrowDownCircle /> <span>Arsipkan</span></>
+                  : <><SlArrowUpCircle /> <span>Batal Arsip</span></>
+              }
             </div>
             <div><SlPencil /> <span>Edit</span></div>
           </div>

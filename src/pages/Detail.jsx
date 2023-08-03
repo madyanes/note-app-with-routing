@@ -1,27 +1,18 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { getNote } from '../utils/local-data'
 import NoteDetail from '../components/NoteDetail'
 
-const DetailWrapper = ({ deleteNoteHandler, archiveNoteHandler }) => {
+const DetailWrapper = ({ deleteNoteHandler, archiveNoteHandler, getNoteHandler }) => {
   const { id } = useParams()
 
-  return <Detail id={id} deleteNoteHandler={deleteNoteHandler} archiveNoteHandler={archiveNoteHandler} />
+  return <Detail deleteNoteHandler={deleteNoteHandler} archiveNoteHandler={archiveNoteHandler} note={getNoteHandler({ id })} />
 }
 
 class Detail extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      note: getNote(this.props.id),
-    }
-  }
-
   render() {
     return (
       <NoteDetail
-        note={this.state.note}
+        note={this.props.note}
         deleteNoteHandler={this.props.deleteNoteHandler}
         archiveNoteHandler={this.props.archiveNoteHandler}
       />
