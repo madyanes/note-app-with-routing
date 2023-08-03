@@ -5,14 +5,12 @@ import { useNavigate } from 'react-router-dom'
 const FormWrapper = ({ onAddNote }) => {
   const navigate = useNavigate()
 
-  return <Form mavigate={navigate} onAddNote={onAddNote} />
+  return <Form navigate={navigate} onAddNote={onAddNote} />
 }
 
 class Form extends React.Component {
   constructor(props) {
     super(props)
-
-    console.log('Komponen <Form />', props)
 
     this.state = {
       title: '',
@@ -39,7 +37,7 @@ class Form extends React.Component {
       body: this.state.body,
     })
 
-    this.props.navigate('/') // doesn't work
+    this.props.navigate('/')
   }
 
   render() {
