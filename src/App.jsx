@@ -31,6 +31,7 @@ class App extends React.Component {
 
   deleteNoteHandler({ id }) {
     deleteNote(id)
+    this.setState({ archivedNotes: getArchivedNotes() })
     this.setState({ activeNotes: getActiveNotes() })
   }
 
