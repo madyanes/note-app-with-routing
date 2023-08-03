@@ -21,6 +21,8 @@ Notes.propTypes = {
   archives: PropTypes.bool,
   deleteNoteHandler: PropTypes.func.isRequired,
   archiveNoteHandler: PropTypes.func.isRequired,
+  searchKeyword: PropTypes.string.isRequired,
+  searchKeywordChange: PropTypes.func.isRequired,
 }
 
 export default Notes

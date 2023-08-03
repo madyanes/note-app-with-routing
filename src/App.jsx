@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route, useSearchParams, useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import { addNote, deleteNote, archiveNote, getArchivedNotes, getActiveNotes, unarchiveNote, getNote } from './utils/local-data'
 import Notes from './pages/Notes'
 import Detail from './pages/Detail'
@@ -114,6 +115,12 @@ class App extends React.Component {
       </React.Fragment>
     )
   }
+}
+
+App.propTypes = {
+  defaultSearchKeyword: PropTypes.string,
+  searchKeywordChange: PropTypes.func.isRequired,
+  navigate: PropTypes.func.isRequired,
 }
 
 export default AppWrapper
