@@ -14,6 +14,7 @@ class NoteList extends React.Component {
                   key={note.id}
                   note={note}
                   deleteNoteHandler={this.props.deleteNoteHandler}
+                  archiveNoteHandler={this.props.archiveNoteHandler}
                 />
               )
             })

@@ -23,7 +23,9 @@ class NoteItem extends React.Component {
             <div onClick={() => { this.props.deleteNoteHandler({ id: this.props.note.id }) }}>
               <SlTrash /> <span>Hapus</span>
             </div>
-            <div><SlArrowDownCircle /> <span>Arsipkan</span></div>
+            <div onClick={() => { this.props.archiveNoteHandler({ id: this.props.note.id }) }}>
+              <SlArrowDownCircle /> <span>Arsipkan</span>
+            </div>
             <div><SlPencil /> <span>Edit</span></div>
           </div>
         </article>

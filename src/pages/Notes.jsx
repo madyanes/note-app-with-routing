@@ -1,4 +1,5 @@
 import React from 'react'
+import { getArchivedNotes } from '../utils/local-data'
 import NoteList from '../components/NoteList'
 
 class Notes extends React.Component {
@@ -8,6 +9,7 @@ class Notes extends React.Component {
         headingText='Notes'
         notes={this.props.notes}
         deleteNoteHandler={this.props.deleteNoteHandler}
+        archiveNoteHandler={this.props.archiveNoteHandler}
       />
     )
   }

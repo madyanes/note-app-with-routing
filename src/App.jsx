@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { addNote, getAllNotes, deleteNote } from './utils/local-data'
+import { addNote, deleteNote, archiveNote, getArchivedNotes, getActiveNotes } from './utils/local-data'
 import Notes from './pages/Notes'
 import Detail from './pages/Detail'
 import Form from './pages/Form'
@@ -15,21 +15,29 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      notes: getAllNotes()
+      activeNotes: getActiveNotes(),
+      archivedNotes: getArchivedNotes(),
     }
 
     this.addNoteHandler = this.addNoteHandler.bind(this)
     this.deleteNoteHandler = this.deleteNoteHandler.bind(this)
+    this.archiveNoteHandler = this.archiveNoteHandler.bind(this)
   }
 
   addNoteHandler({ title, body }) {
     addNote({ title, body })
-    this.setState({ notes: getAllNotes() })
+    this.setState({ activeNotes: getActiveNotes() })
   }
 
   deleteNoteHandler({ id }) {
     deleteNote(id)
-    this.setState({ notes: getAllNotes() })
+    this.setState({ activeNotes: getActiveNotes() })
+  }
+
+  archiveNoteHandler({ id }) {
+    archiveNote(id)
+    this.setState({ archivedNotes: getArchivedNotes() })
+    this.setState({ activeNotes: getActiveNotes() })
   }
 
   render() {
@@ -42,9 +50,10 @@ class App extends React.Component {
         <div className="container-base-box">
           <main>
             <Routes>
-              <Route path="/" element={<Notes notes={this.state.notes} deleteNoteHandler={this.deleteNoteHandler} />} />
+              <Route path="/" element={<Notes notes={this.state.activeNotes} deleteNoteHandler={this.deleteNoteHandler} archiveNoteHandler={this.archiveNoteHandler} />} />
               <Route path="/:id" element={<Detail deleteNoteHandler={this.deleteNoteHandler} />} />
               <Route path="/new" element={<Form onAddNote={this.addNoteHandler} />} />
+              <Route path="/archives" element={<Notes notes={this.state.archivedNotes} deleteNoteHandler={this.deleteNoteHandler} archiveNoteHandler={this.archiveNoteHandler} archives />} />
             </Routes>
           </main>
           <footer>

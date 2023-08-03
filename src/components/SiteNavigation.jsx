@@ -17,7 +17,7 @@ class SiteNavigation extends React.Component {
               <Link to="/">Notes</Link>
             </li>
             <li>
-              <a href="#">Archives</a>
+              <Link to="/archives">Archives</Link>
             </li>
           </ul>
         </nav>
