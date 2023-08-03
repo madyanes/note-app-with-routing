@@ -14,11 +14,19 @@ form input {
   font-size: x-large;
   width: 100%;
   border: none;
+  padding: 20px 10px;
 }
 
 form .editable {
-  font-size: x-large;
   width: 750px;
+  padding: 20px 10px;
+  margin-bottom: 10px;
+}
+
+form button {
+  background-color: #004b9a;
+  color: white;
+  font-weight: bold;
 }
 
 body {
