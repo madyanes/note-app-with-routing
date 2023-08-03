@@ -22,7 +22,6 @@ class App extends React.Component {
     this.addNoteHandler = this.addNoteHandler.bind(this)
     this.deleteNoteHandler = this.deleteNoteHandler.bind(this)
     this.archiveNoteHandler = this.archiveNoteHandler.bind(this)
-    // this.getNoteHandler = this.getNoteHandler.bind(this)
   }
 
   addNoteHandler({ title, body }) {
